@@ -105621,7 +105621,7 @@ function Create() {
               formData.append('descripcion', descripcion);
               formData.append('imagen', imagen);
               _context.next = 7;
-              return axios__WEBPACK_IMPORTED_MODULE_5___default.a.post("http://localhost:8000/api/noticias", formData).then(function (_ref2) {
+              return axios__WEBPACK_IMPORTED_MODULE_5___default.a.post("/api/noticias", formData).then(function (_ref2) {
                 var data = _ref2.data;
                 sweetalert2__WEBPACK_IMPORTED_MODULE_6___default.a.fire({
                   icon: "success",
@@ -105795,7 +105795,7 @@ function EditUser() {
           switch (_context.prev = _context.next) {
             case 0:
               _context.next = 2;
-              return axios__WEBPACK_IMPORTED_MODULE_6___default.a.get("http://localhost:8000/api/noticias/".concat(id)).then(function (_ref2) {
+              return axios__WEBPACK_IMPORTED_MODULE_6___default.a.get("/api/noticias/".concat(id)).then(function (_ref2) {
                 var data = _ref2.data;
                 var _data$noticia = data.noticia,
                   titulo = _data$noticia.titulo,
@@ -105839,7 +105839,7 @@ function EditUser() {
                 formData.append('imagen', imagen);
               }
               _context2.next = 8;
-              return axios__WEBPACK_IMPORTED_MODULE_6___default.a.post("http://localhost:8000/api/noticias/".concat(id), formData).then(function (_ref5) {
+              return axios__WEBPACK_IMPORTED_MODULE_6___default.a.post("/api/noticias/".concat(id), formData).then(function (_ref5) {
                 var data = _ref5.data;
                 sweetalert2__WEBPACK_IMPORTED_MODULE_7___default.a.fire({
                   icon: "success",
@@ -105998,7 +105998,7 @@ function List() {
           switch (_context.prev = _context.next) {
             case 0:
               _context.next = 2;
-              return axios__WEBPACK_IMPORTED_MODULE_4___default.a.get("http://localhost:8000/api/noticias").then(function (_ref2) {
+              return axios__WEBPACK_IMPORTED_MODULE_4___default.a.get("/api/noticias").then(function (_ref2) {
                 var data = _ref2.data;
                 setNews(data.noticias);
               });
@@ -106042,7 +106042,7 @@ function List() {
               return _context2.abrupt("return");
             case 5:
               _context2.next = 7;
-              return axios__WEBPACK_IMPORTED_MODULE_4___default.a["delete"]("http://localhost:8000/api/noticias/".concat(id)).then(function (_ref4) {
+              return axios__WEBPACK_IMPORTED_MODULE_4___default.a["delete"]("/api/noticias/".concat(id)).then(function (_ref4) {
                 var data = _ref4.data;
                 sweetalert2__WEBPACK_IMPORTED_MODULE_5___default.a.fire({
                   icon: "success",
@@ -106089,7 +106089,7 @@ function List() {
       key: key
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, row.titulo), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, row.descripcion), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
       width: "50px",
-      src: "http://localhost:8000/storage/".concat(row.imagen)
+      src: "/storage/".concat(row.imagen)
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, moment__WEBPACK_IMPORTED_MODULE_6___default()(row.updated_at).format('D/M/YYYY, h:mm:ss a')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
       to: "/noticias/edit/".concat(row.id),
       className: "btn btn-primary me-2 mx-1"

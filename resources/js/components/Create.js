@@ -28,7 +28,7 @@ export default function Create() {
     formData.append('descripcion', descripcion)
     formData.append('imagen', imagen)
 
-    await axios.post(`http://localhost:8000/api/noticias`, formData).then(({data})=>{
+    await axios.post(`/api/noticias`, formData).then(({data})=>{
       Swal.fire({
         icon:"success",
         text:data.message

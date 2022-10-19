@@ -15,7 +15,7 @@ export default function List() {
     },[])
 
     const fetchNews = async () => {
-        await axios.get(`http://localhost:8000/api/noticias`).then(({data})=>{
+        await axios.get(`/api/noticias`).then(({data})=>{
             setNews(data.noticias)
         })
     }
@@ -38,7 +38,7 @@ export default function List() {
             return;
           }
 
-          await axios.delete(`http://localhost:8000/api/noticias/${id}`).then(({data})=>{
+          await axios.delete(`/api/noticias/${id}`).then(({data})=>{
             Swal.fire({
                 icon:"success",
                 text:data.message
@@ -82,7 +82,7 @@ export default function List() {
                                                 <td>{row.descripcion}</td>
 
                                                 <td>
-                                                    <img width="50px" src={`http://localhost:8000/storage/${row.imagen}`} />
+                                                    <img width="50px" src={`/storage/${row.imagen}`} />
                                                 </td>
                                                 <td>{Moment(row.updated_at).format('D/M/YYYY, h:mm:ss a')}</td>
                                                 <td>

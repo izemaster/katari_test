@@ -23,7 +23,7 @@ export default function EditUser() {
   },[])
 
   const fetchNews = async () => {
-    await axios.get(`http://localhost:8000/api/noticias/${id}`).then(({data})=>{
+    await axios.get(`/api/noticias/${id}`).then(({data})=>{
       const { titulo, descripcion } = data.noticia
       setTitle(titulo)
       setDescription(descripcion)
@@ -50,7 +50,7 @@ export default function EditUser() {
       formData.append('imagen', imagen)
     }
 
-    await axios.post(`http://localhost:8000/api/noticias/${id}`, formData).then(({data})=>{
+    await axios.post(`/api/noticias/${id}`, formData).then(({data})=>{
       Swal.fire({
         icon:"success",
         text:data.message
